@@ -4,7 +4,7 @@
   
 - name: (Ubuntu) add cran apt repository
   apt_repository: >
-    repo='deb {{r_cran_mirror}}/ubuntu {{ansible_distribution_release}}/'
+    repo='deb {{r_cran_mirror}}/bin/linux/ubuntu {{ansible_distribution_release}}/'
     update_cache=yes
   
 - name: (Ubuntu) installing R...
