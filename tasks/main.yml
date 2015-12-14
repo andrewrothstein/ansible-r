@@ -1,38 +1,22 @@
 ---
-- name : (Ubuntu) add cran apt key
+- name: (Ubuntu) installing....
   when: ansible_distribution == "Ubuntu"
-  environment: proxy_env
-  apt_key: keyserver='keyserver.ubuntu.com' id='E084DAB9'
-  
-- name: (Ubuntu) add cran apt repository
-  when: ansible_distribution == "Ubuntu"
-  environment: proxy_env
-  apt_repository: repo='deb http://lib.stat.cmu.edu/R/CRAN/bin/linux/ubuntu trusty/' update_cache=yes
-  
-- name: (Ubuntu) installing R...
-  when: ansible_distribution == "Ubuntu"
-  environment: proxy_env
-  apt: name={{ item }}
-  with_items:
-    - r-base
-    - r-base-dev
-    - libcurl4-openssl-dev
+  include: Ubuntu.yml
 
-- name: (Fedora) installing R...
+- name: (Fedora) installing....
   when: ansible_distribution == "Fedora"
-  environment: proxy_env
-  yum: name={{ item }}
-  with_items:
-    - R-core
-    - R-core-devel
-    - libcurl-devel
+  include: Fedora.yml
 
 - name: install r-dynamicy-install.r
-  copy: src=r-dynamic-install.r dest=/usr/local/bin mode=0755
+  copy: >
+    src=r-dynamic-install.r
+    dest=/usr/local/bin
+    mode=0755
+    owner=root
+    group=root
     
 - name: installing R packages...
-  environment: proxy_env
-  shell: /usr/local/bin/r-dynamic-install.r {{ item }}
+  command: /usr/local/bin/r-dynamic-install.r {{ item }}
   with_items:
     - shiny
     - rmarkdown
@@ -43,23 +27,4 @@
     - e1071
     - packrat
   
-- name: (Ubuntu) download R Studio
-  when: ansible_distribution == "Ubuntu"
-  environment: proxy_env
-  get_url: url='{{rstudio_deb_url}}' dest='/tmp/{{ rstudio_deb }}'
-
-- name: (Ubuntu) install R Studio
-  when: ansible_distribution == "Ubuntu"
-  environment: proxy_env
-  apt: deb='/tmp/{{ rstudio_deb }}'
-
-- name: (Fedora) download R Studio
-  when: ansible_distribution == "Fedora"
-  environment: proxy_env
-  get_url: url='{{ rstudio_rpm_url }}' dest='/tmp/{{ rstudio_rpm }}'
-
-- name: (Fedora) install R Studio
-  when: ansible_distribution == "Fedora"
-  environment: proxy_env
-  yum: name='/tmp/{{ rstudio_rpm }}' state=present
   
