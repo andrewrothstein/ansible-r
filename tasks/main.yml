@@ -1,13 +1,13 @@
 ---
-- name: (Ubuntu) installing....
-  when: ansible_distribution == "Ubuntu"
-  include: Ubuntu.yml
+- name: (Debian) installing....
+  when: ansible_os_family == "Debian"
+  include: Debian.yml
 
-- name: (Fedora) installing....
-  when: ansible_distribution == "Fedora"
-  include: Fedora.yml
+- name: (EL) installing....
+  when: ansible_os_family == "RedHat"
+  include: EL.yml
 
-- name: install r-dynamicy-install.r
+- name: install r-dynamic-install.r
   copy: >
     src=r-dynamic-install.r
     dest=/usr/local/bin
@@ -16,15 +16,7 @@
     group=root
     
 - name: installing R packages...
-  command: /usr/local/bin/r-dynamic-install.r {{ item }}
-  with_items:
-    - shiny
-    - rmarkdown
-    - dplyr
-    - ggplot2
-    - Rcpp
-    - rJava
-    - e1071
-    - packrat
+  command: /usr/local/bin/r-dynamic-install.r {{item}}
+  with_items: '{{r_pkgs}}'
   
   

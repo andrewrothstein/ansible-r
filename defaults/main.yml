@@ -1,2 +1,4 @@
 ---
-r_cran_mirror : 'http://cran.mirrors.hoobly.com'
+r_cran_mirror : 'http://cran.rstudio.com'
+
+r_pkgs: []
