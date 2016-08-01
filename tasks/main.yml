@@ -21,6 +21,7 @@
 - name: install R module os specific packages
   become: yes
   become_user: root
+  with_items: '{{r_oks_pkgs}}'
   package: name={{r_os_pkg_prefix}}{{item}} state=present
   
 - name: install r-dynamic-install.r
