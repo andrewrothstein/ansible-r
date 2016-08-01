@@ -1,0 +1,14 @@
+---
+apt_key_server : 'keys.gnupg.net'
+apt_key_id: '381BA480'
+
+cran_apt_repo: 'deb {{r_cran_mirror}}/bin/linux/debian {{ansible_distribution_release}}'
+
+r_os_pkg_prefix: 'r-'
+  
+r_base_pkg_list:
+  - r-base
+  - r-base-dev
+  - libopenblas-base
+  - libcurl4-openssl-dev
+

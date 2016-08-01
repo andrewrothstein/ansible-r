@@ -1,3 +1,0 @@
----
-- name: (EL) installing R...
-  package: name=R state=latest

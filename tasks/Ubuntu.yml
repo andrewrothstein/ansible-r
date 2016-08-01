@@ -1,0 +1,16 @@
+---
+- name : add cran apt key
+  become: yes
+  become_user: root
+  apt_key: >
+    keyserver={{apt_key_server}}
+    id={{apt_key_id}}
+  
+- name: add cran apt repository
+  become: yes
+  become_user: root
+  apt_repository: >
+    repo={{cran_apt_repo}}
+    update_cache=yes
+  
+

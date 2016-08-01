@@ -1,4 +1,8 @@
 ---
 r_cran_mirror : 'http://cran.rstudio.com'
 
+# packages to install with the os package manager
+r_os_pkgs: []
+
+# packages to build from source
 r_pkgs: []

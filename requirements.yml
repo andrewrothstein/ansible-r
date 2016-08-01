@@ -1,0 +1,3 @@
+---
+- src: andrewrothstein.epel
+  version: v1.0.1
