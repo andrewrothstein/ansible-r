@@ -1,16 +1,16 @@
 ---
 - name : add cran apt key
-  apt_key: keyserver='keyserver.ubuntu.com' id='E084DAB9'
+  become: yes
+  become_user: root
+  apt_key: >
+    keyserver={{apt_key_server}}
+    id={{apt_key_id}}
   
 - name: add cran apt repository
+  become: yes
+  become_user: root
   apt_repository: >
-    repo='deb {{r_cran_mirror}}/bin/linux/ubuntu {{ansible_distribution_release}}/'
+    repo={{cran_apt_repo}}
     update_cache=yes
   
-- name: (Ubuntu) installing R...
-  package: name={{item}} state=present
-  with_items:
-    - r-base
-    - r-base-dev
-    - libcurl4-openssl-dev
 

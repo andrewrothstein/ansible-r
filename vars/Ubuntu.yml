@@ -3,3 +3,11 @@ apt_key_server: keyserver.ubuntu.com
 apt_key_id: 'E084DAB9'
 
 cran_apt_repo: 'deb {{r_cran_mirror}}/bin/linux/ubuntu {{ansible_distribution_release}}/'
+
+r_os_pkg_prefix: 'r-'
+  
+r_base_pkg_list:
+  - r-base
+  - r-base-dev
+  - libopenblas-base
+  - libcurl4-openssl-dev
