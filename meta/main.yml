@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: R role
+  description: installs R
   company: BlackRock
   license:
     - MIT
@@ -12,14 +12,14 @@ galaxy_info:
         - 7
     - name: Fedora
       versions:
-        - 23
+        - 24
     - name: Ubuntu
       versions:
-        - trusty
         - xenial
 
   galaxy_tags:
-    - development
+    - r
+    - datascience
 
 dependencies:
   - role: andrewrothstein.epel
