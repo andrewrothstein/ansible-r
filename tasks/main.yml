@@ -16,26 +16,28 @@
   become: yes
   become_user: root
   package: name={{item}} state=present
-  with_items: '{{r_base_pkg_list}}'
+  with_items: '{{r_base_pkg_list|default([])}}'
 
 - name: install R module os specific packages
   become: yes
   become_user: root
-  with_items: '{{r_os_pkgs}}'
+  with_items: '{{r_os_pkgs|default([])}}'
   package: name={{r_os_pkg_prefix}}{{item}} state=present
   
 - name: install r-dynamic-install.r
   become: yes
   become_user: root
-  copy: >
-    src=r-dynamic-install.r
-    dest=/usr/local/bin
+  with_items:
+    - r-dynamic-install.r
+  template: >
+    src={{item}}.j2
+    dest=/usr/local/bin/{{item}}
     mode=0755
     
 - name: installing R packages...
   become: yes
   become_user: root
   command: /usr/local/bin/r-dynamic-install.r {{item}}
-  with_items: '{{r_pkgs}}'
+  with_items: '{{r_pkgs|default([])}}'
   
   
