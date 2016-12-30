@@ -16,6 +16,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - xenial
+    - name: Alpine
+      versions:
+        - all
 
   galaxy_tags:
     - r
