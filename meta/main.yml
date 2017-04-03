@@ -12,9 +12,12 @@ galaxy_info:
         - 7
     - name: Fedora
       versions:
+        - 23
         - 24
+        - 25
     - name: Ubuntu
       versions:
+        - trusty
         - xenial
     - name: Alpine
       versions:
