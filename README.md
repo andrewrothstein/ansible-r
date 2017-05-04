@@ -1,6 +1,6 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-r.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-r)
 andrewrothstein.r
 =========
+[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-r.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-r)
 
 Role to install baseline R and a script for idempotently installing packages.
 
