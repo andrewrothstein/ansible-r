@@ -19,9 +19,6 @@ galaxy_info:
       versions:
         - trusty
         - xenial
-    - name: Alpine
-      versions:
-        - all
 
   galaxy_tags:
     - r
@@ -30,5 +27,4 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.epel
-    version: v1.0.1
-  
+    version: v1.0.3
