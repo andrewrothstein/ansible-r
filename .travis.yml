@@ -21,8 +21,10 @@ env:
   - OS=fedora_23
   - OS=fedora_24
   - OS=fedora_25
+  - OS=fedora_26
   - OS=ubuntu_trusty
   - OS=ubuntu_xenial
+  - OS=debian_jessie
     
 before_install:
   - pip install ansible-galaxy-local-deps dcb==0.0.14

@@ -15,6 +15,7 @@ galaxy_info:
         - 23
         - 24
         - 25
+        - 26
     - name: Ubuntu
       versions:
         - trusty
@@ -27,4 +28,4 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.epel
-    version: v1.0.3
+    version: v1.0.5
