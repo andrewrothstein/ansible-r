@@ -21,7 +21,6 @@ test:
               - OS=fedora_26
               - OS=ubuntu_trusty
               - OS=ubuntu_xenial
-              - OS=debian_jessie
 
             script:
               - >-
