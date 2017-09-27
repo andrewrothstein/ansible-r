@@ -10,7 +10,7 @@
   become: yes
   become_user: root
   when: ansible_os_family == "Debian"
-  include: apt.yml
+  include_tasks: apt.yml
 
 - name: installing R core/base packages...
   become: yes
