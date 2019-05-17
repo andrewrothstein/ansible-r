@@ -1,31 +1,28 @@
----
+dependencies:
+- role: andrewrothstein.epel
+  version: v1.0.8
 galaxy_info:
   author: Andrew Rothstein
-  description: installs R
   company: BlackRock
+  description: installs R
+  galaxy_tags:
+  - r
+  - rstudio
+  - datascience
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.0
   platforms:
-    - name: EL
-      versions:
-        - 7
-    - name: Fedora
-      versions:
-        - 23
-        - 24
-        - 25
-        - 26
-    - name: Ubuntu
-      versions:
-        - trusty
-        - xenial
-
-  galaxy_tags:
-    - r
-    - rstudio
-    - datascience
-
-dependencies:
-  - role: andrewrothstein.epel
-    version: v1.0.6
+  - name: EL
+    versions:
+    - 7
+  - name: Fedora
+    versions:
+    - 23
+    - 24
+    - 25
+    - 26
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
