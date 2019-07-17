@@ -7,10 +7,12 @@
     - "{{ansible_os_family}}.yml"
 
 - name: (Debian) configuring apt....
-  become: yes
-  become_user: root
   when: ansible_os_family == "Debian"
-  include_tasks: apt.yml
+  include_tasks:
+    file: apt.yml
+    apply:
+      become: yes
+      become_user: root
 
 - name: installing R core/base packages...
   become: yes
