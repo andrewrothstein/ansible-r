@@ -34,14 +34,15 @@
   become: yes
   become_user: root
   with_items:
-    - r-dynamic-install.r
+    - f: r-dynamic-install.r
+      d: '{{ r_dynamic_installer_path }}'
   template:
-    src: '{{ item }}.j2'
-    dest: /usr/local/bin/{{ item }}
-    mode: 0755
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: '{{ item.m | default("0755") }}'
 
 - name: installing R packages...
   become: yes
   become_user: root
-  command: /usr/local/bin/r-dynamic-install.r {{ item }}
   with_items: '{{ r_pkgs | default([]) }}'
+  command: '{{ r_dynamic_installer_path }}/r-dynamic-install.r {{ item }}'

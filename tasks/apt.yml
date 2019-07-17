@@ -1,5 +1,5 @@
 ---
-- name : add cran apt key
+- name: add cran apt key
   become: yes
   become_user: root
   apt_key:

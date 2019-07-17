@@ -1,6 +1,8 @@
 ---
-r_cran_mirror : http://cran.rstudio.com
+r_cran_mirror: http://cran.rstudio.com
 
 # R packages to install
 #r_pkgs:
 #  - datasets
+
+r_dynamic_installer_path: /usr/local/bin
