@@ -1,0 +1,4 @@
+---
+r_os_pkg_prefix: R-
+r_base_pkg_list:
+  - r

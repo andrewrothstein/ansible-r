@@ -22,7 +22,11 @@ galaxy_info:
     - 24
     - 25
     - 26
+  - name: Archlinux
+    versions:
+    - all
   - name: Ubuntu
     versions:
+    - bionic
     - trusty
     - xenial
