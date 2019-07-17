@@ -4,6 +4,7 @@
 - alpine_3.8
 - alpine_3.9
 - alpine_edge
+- debian_stretch
 - centos_7
 - fedora_23
 - fedora_24

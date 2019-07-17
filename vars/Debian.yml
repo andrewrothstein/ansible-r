@@ -1,8 +1,8 @@
 ---
 apt_key_server: keys.gnupg.net
-apt_key_id: '381BA480'
+apt_key_id: E19F5F87128899B192B1A2C2AD5F960A256A04AF
 
-cran_apt_repo: deb {{ r_cran_mirror }}/bin/linux/debian {{ ansible_distribution_release }}-cran35
+cran_apt_repo: deb {{ r_cran_mirror }}/bin/linux/debian {{ ansible_distribution_release }}-cran35/
 
 r_os_pkg_prefix: r-
   
