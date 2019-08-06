@@ -1,6 +1,6 @@
 ---
 apt_key_server: keyserver.ubuntu.com
-apt_key_id: E084DAB9
+apt_key_id: 51716619e084dab9
 
 cran_apt_repo: deb {{r_cran_mirror}}/bin/linux/ubuntu {{ansible_distribution_release}}-cran35/
 
