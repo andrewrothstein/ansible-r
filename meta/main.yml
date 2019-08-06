@@ -1,6 +1,8 @@
 dependencies:
 - role: andrewrothstein.epel
   version: v1.0.8
+- role: andrewrothstein.gpg
+  version: v1.0.5
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
