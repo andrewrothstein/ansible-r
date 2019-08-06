@@ -11,4 +11,3 @@ r_base_pkg_list:
   - r-base-dev
   - libopenblas-base
   - libcurl4-openssl-dev
-
