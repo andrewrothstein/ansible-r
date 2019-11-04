@@ -1,12 +1,12 @@
-- archlinux_latest
 - alpine_3.6
 - alpine_3.7
 - alpine_3.8
 - alpine_3.9
 - alpine_edge
+- archlinux_latest
+- centos_7
 - debian_buster
 - debian_stretch
-- centos_7
 - fedora_23
 - fedora_24
 - fedora_25
@@ -15,6 +15,8 @@
 - fedora_28
 - fedora_29
 - fedora_30
+- fedora_31
+- fedora_32
+- ubi8_8.0
 - ubuntu_bionic
-- ubuntu_trusty
 - ubuntu_xenial
