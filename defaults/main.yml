@@ -1,5 +1,5 @@
 ---
-r_cran_mirror: http://cran.rstudio.com
+r_cran_mirror: https://cloud.r-project.org
 
 # R packages to install
 #r_pkgs:
