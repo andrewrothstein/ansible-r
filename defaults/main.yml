@@ -6,3 +6,4 @@ r_cran_mirror: http://cran.rstudio.com
 #  - datasets
 
 r_dynamic_installer_path: /usr/local/bin
+r_apt_repo_suffix: cran40
