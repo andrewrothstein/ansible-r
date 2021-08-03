@@ -1,8 +1,8 @@
 dependencies:
 - role: andrewrothstein.epel
-  version: v1.1.0
+  version: v1.1.2
 - role: andrewrothstein.gpg
-  version: v1.0.7
+  version: v1.0.8
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
@@ -23,18 +23,15 @@ galaxy_info:
     - all
   - name: Debian
     versions:
+    - bullseye
     - buster
-    - stretch
   - name: EL
     versions:
-    - 7
     - 8
   - name: Fedora
     versions:
-    - 31
-    - 32
+    - 34
   - name: Ubuntu
     versions:
     - bionic
     - focal
-    - xenial

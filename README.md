@@ -1,6 +1,6 @@
 andrewrothstein.r
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-r.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-r)
+![Build Status](https://github.com/andrewrothstein/ansible-r/actions/workflows/build.yml/badge.svg)
 
 Role to install baseline R and a script for idempotently installing packages.
 
