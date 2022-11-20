@@ -1,9 +1,9 @@
 ---
 r_cran_mirror: https://cloud.r-project.org
 
-# R packages to install
-#r_pkgs:
-#  - datasets
+## R packages to install
+##r_pkgs:
+##  - datasets
 
 r_dynamic_installer_path: /usr/local/bin
 r_apt_repo_suffix: cran40

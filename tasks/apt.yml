@@ -4,7 +4,7 @@
   become_user: root
   apt_key:
     keyserver: '{{ apt_key_server }}'
-    id: '{{ apt_key_id }}'
+    id: '{{ apt_key_ids[ansible_distribution] }}'
 
 - name: add cran apt repository
   become: true
