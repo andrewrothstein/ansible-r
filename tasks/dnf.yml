@@ -1,0 +1,6 @@
+---
+- name: dnf enabling repos
+  become: true
+  become_user: root
+  with_items: '{{ r_dnf_repos | default([]) }}'
+  command: dnf config-manager --enable '{{ item }}'

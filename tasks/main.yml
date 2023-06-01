@@ -14,20 +14,14 @@
       paths:
         - '{{ role_path }}/vars'
 
-- name: (Debian) configuring apt....
-  when: ansible_os_family == "Debian"
-  include_tasks:
-    file: apt.yml
-    apply:
-      become: true
-      become_user: root
+- when: r_pkg_mgr is defined
+  include_tasks: '{{ r_pkg_mgr }}.yml'
 
 - name: installing R core/base packages...
   become: true
   become_user: root
-  with_items: '{{ r_base_pkg_list | default([]) }}'
   package:
-    name: '{{ item }}'
+    name: '{{ r_base_pkg_list | default([]) }}'
     state: present
 
 - name: install R module os specific packages

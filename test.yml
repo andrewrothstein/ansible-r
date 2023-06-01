@@ -1,6 +1,6 @@
 ---
 - hosts: all
   roles:
-    - role: '{{playbook_dir}}'
+    - role: '{{ playbook_dir }}'
       r_pkgs:
-        - datasets
+        - tidyverse

@@ -1,9 +1,6 @@
 ---
 r_pkg_mgr: dnf
 
-r_dnf_repos:
-  - powertools
-
 r_os_pkg_prefix: R-
 
 r_base_pkg_list:

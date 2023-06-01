@@ -1,16 +1,18 @@
 ---
-apt_key_server: keyserver.ubuntu.com
-apt_key_ids:
+r_pkg_mgr: apt
+
+r_apt_key_ids:
   Debian: '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
   Ubuntu: 'E298A3A825C0D65DFD57CBB651716619E084DAB9'
+r_apt_key_id: '{{ r_apt_key_ids[ansible_distribution] }}'
 
-
-cran_apt_repo: deb {{ r_cran_mirror }}/bin/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }}-{{ r_apt_repo_suffix }}/
+r_apt_key_server: keyserver.ubuntu.com
+r_apt_repo: deb {{ r_cran_mirror }}/bin/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }}-{{ r_apt_repo_suffix }}/
 
 r_os_pkg_prefix: r-
 
 r_base_pkg_list:
   - r-base
   - r-base-dev
-  - libopenblas-base
+  - libopenblas0
   - libcurl4-openssl-dev
