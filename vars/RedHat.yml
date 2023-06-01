@@ -1,8 +1,13 @@
 ---
 r_pkg_mgr: dnf
 
-r_dnf_repos:
-  - powertools
+r_dnf_repos_by_ver:
+  '8':
+    - powertools
+  '9':
+    - crb
+
+r_dnf_repos: '{{ r_dnf_repos_by_ver[ansible_distribution_major_version] }}'
 
 r_os_pkg_prefix: R-
 
