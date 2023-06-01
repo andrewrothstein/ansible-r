@@ -1,5 +1,5 @@
 ---
 - name: andrewrothstein.epel
-  version: v1.1.7
+  version: v1.1.8
 - name: andrewrothstein.gpg
-  version: v1.0.13
+  version: v1.0.15
