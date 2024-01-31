@@ -1,14 +1,14 @@
 ---
-- name: 'adding cran apt key (id:{{ r_apt_key_id }}) from {{ r_apt_key_server }}'
+- name: 'Adding cran apt key (id:{{ r_apt_key_id }}) from {{ r_apt_key_server }}'
   become: true
   become_user: root
-  apt_key:
+  ansible.builtin.apt_key:
     keyserver: '{{ r_apt_key_server }}'
     id: '{{ r_apt_key_id }}'
 
-- name: 'adding cran apt repository: {{ r_apt_repo }}'
+- name: 'Adding cran apt repository: {{ r_apt_repo }}'
   become: true
   become_user: root
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: '{{ r_apt_repo }}'
     update_cache: true

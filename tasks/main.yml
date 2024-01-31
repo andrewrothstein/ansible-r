@@ -1,10 +1,12 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.epel
+  ansible.builtin.include_role:
     name: andrewrothstein.epel
-- include_role:
+- name: Installing andrewrothstein.gpg
+  ansible.builtin.include_role:
     name: andrewrothstein.gpg
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -14,37 +16,39 @@
       paths:
         - '{{ role_path }}/vars'
 
-- when: r_pkg_mgr is defined
-  include_tasks: '{{ r_pkg_mgr }}.yml'
+- name: Using pkg manager {{ r_pkg_mgr }}
+  when: r_pkg_mgr is defined
+  ansible.builtin.include_tasks: '{{ r_pkg_mgr }}.yml'
 
-- name: installing R core/base packages...
+- name: Installing R core/base packages...
   become: true
   become_user: root
-  package:
+  ansible.builtin.package:
     name: '{{ r_base_pkg_list | default([]) }}'
     state: present
 
-- name: install R module os specific packages
+- name: Install R module os specific packages
   become: true
   become_user: root
   with_items: '{{ r_os_pkgs | default([]) }}'
-  package:
+  ansible.builtin.package:
     name: '{{ r_os_pkg_prefix }}{{ item }}'
     state: present
 
-- name: install r-dynamic-install.r
+- name: Install r-dynamic-install.r
   become: true
   become_user: root
   with_items:
     - f: r-dynamic-install.r
       d: '{{ r_dynamic_installer_path }}'
-  template:
+  ansible.builtin.template:
     src: '{{ item.f }}.j2'
     dest: '{{ item.d }}/{{ item.f }}'
-    mode: '{{ item.m | default("0755") }}'
+    mode: '{{ item.m | default("755") }}'
 
-- name: installing R packages...
+- name: Installing R packages...
   become: true
   become_user: root
   with_items: '{{ r_pkgs | default([]) }}'
-  command: '{{ r_dynamic_installer_path }}/r-dynamic-install.r {{ item }}'
+  ansible.builtin.command: '{{ r_dynamic_installer_path }}/r-dynamic-install.r {{ item }}'
+  changed_when: false
